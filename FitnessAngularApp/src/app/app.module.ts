@@ -11,6 +11,7 @@ import { TrainingComponent } from './training/training.component';
 import { CurrentComponent } from './training/current/current.component';
 import { NewComponent } from './training/new/new.component';
 import { PreviousComponent } from './training/previous/previous.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PreviousComponent } from './training/previous/previous.component';
     TrainingComponent,
     CurrentComponent,
     NewComponent,
-    PreviousComponent
+    PreviousComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
