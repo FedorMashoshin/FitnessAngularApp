@@ -12,6 +12,7 @@ import { CurrentComponent } from './training/current/current.component';
 import { NewComponent } from './training/new/new.component';
 import { PreviousComponent } from './training/previous/previous.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterailModule
+    MaterailModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
