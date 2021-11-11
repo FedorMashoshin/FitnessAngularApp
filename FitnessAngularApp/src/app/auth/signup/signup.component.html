@@ -1,12 +1,32 @@
-<section>
-  <form action="">
+<section class="signup__form">
+  <form fxLayout="column" fxLayoutAlign="center center" #form="ngForm" (ngSubmit)="onSubmit(form)">
     <mat-form-field appearance="fill">
       <mat-label>Email</mat-label>
-      <input matInput type="email" placeholder="email@example.com">
+      <input
+        matInput
+        type="email"
+        placeholder="email@example.com"
+        ngModel name="email"
+        email
+        required>
+      <mat-error>Email is invalid</mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Password</mat-label>
-      <input matInput type="password" placeholder="password">
+      <input
+        matInput
+        type="password"
+        placeholder="password"
+        autocomplete="off"
+        ngModel
+        name="password"
+        required
+        minlength="8"
+        [(ngModel)]="password">
+      <mat-hint *ngIf="password?.length < 8">Password should be at least 8 characters long</mat-hint>
+      <mat-hint *ngIf="password?.length > 0" align="end" >{{ password?.length }} / 8</mat-hint>
+      <mat-error>Password should be at least 8 characters long ({{ password?.length }}/8)</mat-error>
     </mat-form-field>
+    <button type="submit" mat-raised-button color="primary">Submit</button>
   </form>
 </section>
