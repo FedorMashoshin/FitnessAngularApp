@@ -6,6 +6,7 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   public toggleSidenav(): void {
 
   }

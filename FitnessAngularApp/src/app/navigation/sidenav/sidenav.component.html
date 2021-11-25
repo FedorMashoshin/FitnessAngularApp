@@ -1,0 +1,8 @@
+<h2>Best Fitness APP</h2>
+<mat-selection-list #shoes [multiple]="false">
+  <mat-list-option class="test" *ngFor="let link of links" [value]="link.name" (click)="onToggleSidenav()" [routerLink]="link.url">
+    <span>
+      <mat-icon>{{ link.icon }}</mat-icon> {{link.name}}
+    </span>
+  </mat-list-option>
+</mat-selection-list>
