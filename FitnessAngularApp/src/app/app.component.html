@@ -2,13 +2,13 @@
   <mat-sidenav #sidenav role="navigation">Sidenav content</mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <div class="">
+      <div class="" fxHide.sm>
         <button mat-icon-button (click)="sidenav.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
       </div>
       <div class="">LOGO</div>
-      <div class="" fxFlex fxLayout fxLayoutAlign="flex-end">
+      <div class="" fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
         <ul>
           <li><a href="/signup">Signup</a></li>
           <li><a href="/login">Login</a></li>
