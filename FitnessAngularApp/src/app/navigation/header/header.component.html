@@ -5,6 +5,12 @@
     </button>
   </div>
   <div fxHide.xs><mat-icon class="header__icon" routerLink="/">directions_bike</mat-icon></div>
+  <div class="header__logo" fxShow.xs>
+    <mat-icon class="header__logo--icon">directions_bike</mat-icon>
+    <h2 routerLink="/" class="sidenav__header" (click)="onToggleSidenav()">
+      Fitness APP
+    </h2>
+  </div>
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <ul>
       <li class="header__list" *ngFor="let link of links">

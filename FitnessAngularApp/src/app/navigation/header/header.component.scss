@@ -1,4 +1,13 @@
 .header {
+  &__logo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &--icon {
+      margin-right: 1rem;
+    }
+  }
   &__icon {
     font-size: 2rem;
   }
