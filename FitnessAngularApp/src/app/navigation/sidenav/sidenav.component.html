@@ -1,8 +1,11 @@
-<h2>Best Fitness APP</h2>
-<mat-selection-list #shoes [multiple]="false">
-  <mat-list-option class="test" *ngFor="let link of links" [value]="link.name" (click)="onToggleSidenav()" [routerLink]="link.url">
-    <span>
-      <mat-icon>{{ link.icon }}</mat-icon> {{link.name}}
+<h2 class="sidenav__header">
+  <mat-icon class="sidenav__header--icon">directions_bike</mat-icon>
+  Fitness APP
+</h2>
+<mat-selection-list class="sidenav__selection"  #shoes [multiple]="false">
+  <mat-list-option class="sidenav__list" *ngFor="let link of links" [value]="link.name" (click)="onToggleSidenav()" [routerLink]="link.url">
+    <span class="sidenav__list--span">
+      <mat-icon class="sidenav__list--icon">{{ link.icon }}</mat-icon> {{link.name}}
     </span>
   </mat-list-option>
 </mat-selection-list>

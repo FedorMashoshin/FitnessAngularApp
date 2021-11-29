@@ -1,0 +1,21 @@
+.header {
+  &__icon {
+    font-size: 2rem;
+  }
+  &__list {
+    display: inline-block;
+    margin-right: .2rem;
+    padding: 0.2rem 1rem;
+    background-color: rgba(255, 255, 255, 0.061);
+    border-radius: 1rem;
+    &:active {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+  &__link {
+    font-weight: normal;
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
+  }
+}
