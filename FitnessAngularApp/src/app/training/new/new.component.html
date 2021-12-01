@@ -1,1 +1,19 @@
-<p>new works!</p>
+<section fxLayout fxLayoutAlign="center">
+  <mat-card fxFlex.xs="100%" fxFlex="80%">
+    <mat-card-title fxLayoutAlign="center">Start new workout</mat-card-title>
+    <mat-card-content fxLayoutAlign="center">
+      <mat-form-field appearance="fill">
+        <mat-label>Choose Workout</mat-label>
+        <mat-select [(ngModel)]="selectedValue" name="food">
+          <mat-option *ngFor="let workout of workouts" [value]="workout.value">
+            {{workout.type}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-button>Start</button>
+    </mat-card-actions>
+  </mat-card>
+</section>
+
