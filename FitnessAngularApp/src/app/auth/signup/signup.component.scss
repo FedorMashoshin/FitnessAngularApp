@@ -1,6 +1,8 @@
 .signup__page{
+  font-family: 'Roboto', sans-serif;
+  overflow-y: hidden;
   height: 90vh;
-  background:url('/assets/signup.png') no-repeat rgb(238, 231, 255);
+  background: linear-gradient(174deg, hsla(262, 52%, 47%, 1) 0%, hsla(196, 68%, 38%, 1) 100%);
   background-position: center -5%;
   background-size: 150%;
   &--form{
@@ -8,7 +10,7 @@
     width: 100%;
     position: fixed;
     bottom: 0;
-    padding: 2rem 0 3rem;
+    padding: 2rem 0;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     &-button {
@@ -16,11 +18,26 @@
       width: 80%;
     }
     &-header {
+      letter-spacing: 1.5px;
+      color: #fff;
+      padding: 40% 0 0 3rem;
       text-align: left;
       margin-bottom: 2rem;
-      width: 80%;
+      width: 100%;
+      font-size: 4rem;
+      font-weight: 900;
+    }
+    &-paragraph {
+      margin-left: 3rem;
+      margin-top: 3rem;
       font-size: 2rem;
-      font-family: 'M PLUS 1 Code', sans-serif;
+      color: #fff;
+      font-weight: 300;
+      &--italic {
+        font-style: italic;
+        margin-top: 0;
+        font-size: 1rem;
+      }
     }
   }
 }
