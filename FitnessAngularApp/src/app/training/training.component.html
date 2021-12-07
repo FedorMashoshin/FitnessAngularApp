@@ -1,11 +1,11 @@
 <div class="wrapper">
   <mat-tab-group mat-align-tabs="center" *ngIf="!onGoingTraining">
-    <mat-tab label="Previous">
-      <app-previous></app-previous>
-    </mat-tab>
     <mat-tab label="New">
       <app-new (trainingStart)="onGoingTraining = true"></app-new>
     </mat-tab>
+    <mat-tab label="Previous">
+      <app-previous></app-previous>
+    </mat-tab>
   </mat-tab-group>
-  <app-current *ngIf="onGoingTraining"></app-current>
+  <app-current *ngIf="onGoingTraining" (exitTraining)="onGoingTraining = false"></app-current>
 </div>
