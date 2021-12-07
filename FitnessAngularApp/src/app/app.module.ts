@@ -16,6 +16,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavComponent } from './navigation/sidenav/sidenav.component';
+import { StopTrainingComponent } from './training/current/stop-training.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SidenavComponent } from './navigation/sidenav/sidenav.component';
     PreviousComponent,
     WelcomeComponent,
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    StopTrainingComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { SidenavComponent } from './navigation/sidenav/sidenav.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [StopTrainingComponent]
 })
 export class AppModule { }
