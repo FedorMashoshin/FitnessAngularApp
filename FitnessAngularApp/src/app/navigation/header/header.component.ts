@@ -1,4 +1,6 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/auth/auth.service';
 import { GlobalConstants } from 'src/app/global';
 
 @Component({
@@ -6,13 +8,24 @@ import { GlobalConstants } from 'src/app/global';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
-  links: any = GlobalConstants.links;
+export class HeaderComponent implements OnInit, OnDestroy {
   @Output() toggleSidenav = new EventEmitter<void>();
 
-  constructor() { }
+  isAuth: boolean = false;
+  authSubscription: Subscription;
+
+  constructor(
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
+    this.authSubscription = this.authService.authChange.subscribe(status => {
+      this.isAuth = status;
+    })
+  }
+
+  ngOnDestroy(): void {
+    this.authSubscription.unsubscribe();
   }
 
   onToggleSidenav() {

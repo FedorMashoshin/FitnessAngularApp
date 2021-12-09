@@ -3,7 +3,7 @@ export class GlobalConstants {
     {
       name: 'Training',
       icon: 'gavel',
-      url: '/training'
+      url: '/training',
     },
     {
       name: 'Signup',

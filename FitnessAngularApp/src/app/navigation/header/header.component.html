@@ -13,8 +13,17 @@
   </div>
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <ul>
-      <li class="header__list" *ngFor="let link of links">
-        <a class="header__link" [href]="link.url">{{ link.name }}</a>
+      <li *ngIf="!isAuth" class="header__list">
+        <a class="header__link" href="/signup">Signup</a>
+      </li>
+      <li *ngIf="isAuth" class="header__list">
+        <a class="header__link" href="/training">Training</a>
+      </li>
+      <li *ngIf="!isAuth"  class="header__list">
+        <a class="header__link" href="/login">Login</a>
+      </li>
+      <li *ngIf="isAuth" class="header__list">
+        <a class="header__link" href="/logout">Logout</a>
       </li>
     </ul>
   </div>

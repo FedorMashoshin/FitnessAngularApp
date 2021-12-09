@@ -2,14 +2,15 @@
     <h2 class="login__page--form-header">Login.</h2>
       <p class="login__page--form-paragraph">Welcome back, </p>
       <p class="login__page--form-paragraph login__page--form-paragraph--italic">Sign in to continue</p>
-    <form class="login__page--form" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="13px" #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <form class="login__page--form" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="13px" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <mat-form-field appearance="fill">
         <mat-label>Email</mat-label>
         <input
           matInput
           type="email"
           placeholder="email@example.com"
-          ngModel name="email"
+          ngModel
+          formControlName="email"
           email
           required>
         <mat-error>Email is invalid</mat-error>
@@ -22,7 +23,7 @@
           placeholder="password"
           autocomplete="off"
           ngModel
-          name="password"
+          formControlName="password"
           required
           minlength="8"
           [(ngModel)]="password">
@@ -30,6 +31,6 @@
         <mat-hint *ngIf="password?.length > 0" align="end" >{{ password?.length }} / 8</mat-hint>
         <mat-error>Password should be at least 8 characters long ({{ password?.length || 0 }}/8)</mat-error>
       </mat-form-field>
-      <button class="login__page--form-button" [disabled]="form.invalid" type="submit" mat-raised-button color="primary">Submit</button>
+      <button class="login__page--form-button" [disabled]="loginForm.invalid" type="submit" mat-raised-button color="primary">Submit</button>
     </form>
   </section>
